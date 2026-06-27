@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Johnson Health Essentials | Facility Intelligence & HVAC Optimization</title>
+  <meta name="description" content="Johnson Health Essentials helps healthcare, hospitality, government, and facility management organizations reduce energy costs, optimize HVAC performance, and extend equipment life.">
+  <style>
+    :root {
+      --ink: #221f1a;
+      --muted: #665f54;
+      --paper: #faf6ef;
+      --paper-2: #efe7d7;
+      --white: #fffdf8;
+      --green: #1f5b57;
+      --green-2: #dcebe6;
+      --copper: #c2683e;
+      --gold: #e5b565;
+      --line: rgba(34, 31, 26, .12);
+      --shadow: 0 22px 70px rgba(34, 31, 26, .14);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    p, h1, h2, h3 { margin-top: 0; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--copper);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250, 246, 239, .9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--paper);
+      background: var(--green);
+      font-family: Georgia, serif;
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: #4d473e;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .nav-cta,
+    .button.primary {
+      color: var(--white);
+      background: var(--copper);
+      box-shadow: 0 12px 28px rgba(194, 104, 62, .25);
+    }
+
+    .button.secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, .44);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .nav-cta:hover,
+    .button:hover { transform: translateY(-2px); }
+
+    .hero {
+      position: relative;
+      min-height: calc(86vh - 72px);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: #171511;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(20, 18, 14, .88), rgba(20, 18, 14, .58) 46%, rgba(20, 18, 14, .2)),
+        linear-gradient(0deg, rgba(20, 18, 14, .82), rgba(20, 18, 14, .05) 45%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 82px 0 54px;
+    }
+
+    .hero h1 {
+      max-width: 860px;
+      margin: 20px 0 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(46px, 7vw, 88px);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 730px;
+      color: rgba(255, 253, 248, .84);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(760px, 100%);
+      margin-top: 54px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, .16);
+      backdrop-filter: blur(12px);
+    }
+
+    .metric {
+      min-height: 112px;
+      padding: 22px;
+      background: rgba(20, 18, 14, .38);
+    }
+
+    .metric strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 9px;
+      color: rgba(255, 253, 248, .72);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .section {
+      padding: 88px 0;
+      border-top: 1px solid rgba(34, 31, 26, .08);
+    }
+
+    .section.alt { background: var(--white); }
+    .section.dark {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .section h2 {
+      margin: 14px 0 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .dark .section-head p,
+    .dark .muted { color: rgba(255, 253, 248, .68); }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .industry-card {
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      position: relative;
+      color: var(--white);
+      border-radius: var(--radius);
+      background: #312d27;
+      box-shadow: 0 12px 38px rgba(34, 31, 26, .12);
+    }
+
+    .industry-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(20, 18, 14, .92), rgba(20, 18, 14, .08) 58%);
+    }
+
+    .industry-card img {
+      position: absolute;
+      inset: 0;
+      transition: transform .5s ease;
+    }
+
+    .industry-card:hover img { transform: scale(1.04); }
+
+    .industry-body {
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+
+    .industry-body h3 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      line-height: 1.05;
+      font-weight: 500;
+    }
+
+    .industry-body p {
+      margin: 0 0 18px;
+      color: rgba(255, 253, 248, .74);
+      font-size: 14px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      color: rgba(255, 253, 248, .88);
+      background: rgba(255, 255, 255, .13);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .outcome-band {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 36px;
+      align-items: center;
+      margin-top: 44px;
+      padding: 42px;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .outcome-band h3 {
+      margin: 0 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 500;
+      line-height: 1.05;
+    }
+
+    .outcome-band p { color: rgba(255, 253, 248, .76); }
+
+    .mini-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .mini-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      font-weight: 800;
+    }
+
+    .mini-list li::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex: 0 0 auto;
+    }
+
+    .services {
+      display: grid;
+      gap: 22px;
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 34px;
+      align-items: stretch;
+      min-height: 360px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .service:nth-child(even) {
+      grid-template-columns: 1.08fr .92fr;
+      background: #f4eee4;
+    }
+
+    .service:nth-child(even) .service-media { order: 2; }
+
+    .service-media {
+      position: relative;
+      min-height: 320px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--paper-2);
+    }
+
+    .service-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 26px 18px;
+    }
+
+    .service-number {
+      color: var(--copper);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .service h3 {
+      margin: 12px 0 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.06;
+      font-weight: 500;
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      padding: 13px 14px;
+      border: 1px solid rgba(31, 91, 87, .18);
+      border-radius: var(--radius);
+      color: #24413d;
+      background: var(--green-2);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .overlay-note {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: var(--radius);
+      color: var(--white);
+      background: rgba(20, 18, 14, .66);
+      backdrop-filter: blur(10px);
+    }
+
+    .overlay-note strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .overlay-note span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 253, 248, .72);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .proof-card {
+      min-height: 250px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .proof-card strong {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .proof-card h3 {
+      margin: 0 0 12px;
+      font-size: 19px;
+    }
+
+    .proof-card p {
+      margin: 0;
+      color: rgba(255, 253, 248, .68);
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: minmax(0, .96fr) minmax(320px, .74fr);
+      gap: 48px;
+      align-items: stretch;
+    }
+
+    .contact-panel {
+      padding: 34px;
+      border-radius: var(--radius);
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .contact-panel h2 {
+      margin-top: 12px;
+    }
+
+    .contact-panel p { color: rgba(255, 253, 248, .78); }
+
+    .contact-card {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 16px 44px rgba(34, 31, 26, .08);
+    }
+
+    .contact-card h3 {
+      margin-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      font-weight: 500;
+    }
+
+    .contact-rows {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .contact-row {
+      padding: 15px 16px;
+      border-radius: var(--radius);
+      background: #f1eadf;
+      font-weight: 800;
+    }
+
+    .footer {
+      padding: 42px 0;
+      color: rgba(255, 253, 248, .64);
+      background: #171511;
+    }
+
+    .footer-grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 28px;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding-top: 26px;
+      font-size: 13px;
+    }
+
+    .footer a { color: rgba(255, 253, 248, .82); }
+
+    @media (max-width: 980px) {
+      .nav { align-items: flex-start; padding: 14px 0; }
+      .nav-links { display: none; }
+      .hero { min-height: 78vh; }
+      .hero-metrics,
+      .industry-grid,
+      .proof-grid { grid-template-columns: 1fr; }
+      .section-head,
+      .outcome-band,
+      .service,
+      .service:nth-child(even),
+      .contact {
+        grid-template-columns: 1fr;
+      }
+      .service:nth-child(even) .service-media { order: 0; }
+      .industry-card { min-height: 320px; }
+    }
+
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .brand span { white-space: normal; }
+      .nav-cta { display: none; }
+      .hero-content { padding: 58px 0 38px; }
+      .hero h1 { font-size: 44px; }
+      .hero-metrics { margin-top: 34px; }
+      .metric { min-height: auto; }
+      .section { padding: 64px 0; }
+      .section-head { gap: 18px; margin-bottom: 28px; }
+      .outcome-band,
+      .contact-panel,
+      .contact-card { padding: 26px; }
+      .service { padding: 14px; gap: 18px; }
+      .service-panel { padding: 12px 4px 8px; }
+      .service-media { min-height: 260px; }
+      .feature-list { grid-template-columns: 1fr; }
+      .footer-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Johnson Health Essentials home">
+        <span class="brand-mark">J</span>
+        <span>Johnson Health Essentials</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#industries">Industries</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why JHE</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="nav-cta" href="#contact">Schedule Assessment</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Johnson Health Essentials">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/healthcare-facility.jpg" alt="">
+      </div>
+      <div class="wrap hero-content">
+        <span class="eyebrow">Facility intelligence for critical buildings</span>
+        <h1>Reduce Energy Costs. Extend Equipment Life. Improve Building Performance.</h1>
+        <p class="hero-copy">Johnson Health Essentials helps healthcare systems, hospitality organizations, facility management companies, and engineering teams optimize HVAC performance, improve indoor air quality, and delay costly capital replacements through AI-powered facility assessments.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#contact">Schedule a Facility Assessment</a>
+          <a class="button secondary" href="#services">Explore Services</a>
+        </div>
+        <div class="hero-metrics" aria-label="Company highlights">
+          <div class="metric">
+            <strong>30+</strong>
+            <span>Years of facility operations experience</span>
+          </div>
+          <div class="metric">
+            <strong>4</strong>
+            <span>Primary sectors served</span>
+          </div>
+          <div class="metric">
+            <strong>1</strong>
+            <span>Assessment can guide many sites</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="industries">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Industries we serve</span>
+            <h2>Focused on buildings where comfort, reliability, and cost control matter every day.</h2>
+          </div>
+          <p>JHE is positioned for owners, operators, and facility management partners who need measurable operational improvements without defaulting to major equipment replacement.</p>
+        </div>
+
+        <div class="industry-grid">
+          <article class="industry-card">
+            <img src="assets/healthcare-facility.jpg" alt="Modern hospital facility exterior">
+            <div class="industry-body">
+              <h3>Healthcare</h3>
+              <p>Hospitals, surgery centers, outpatient clinics, long-term care facilities, and healthcare campuses.</p>
+              <div class="chips">
+                <span class="chip">IAQ</span>
+                <span class="chip">Joint Commission readiness</span>
+                <span class="chip">Aging HVAC</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="industry-card">
+            <img src="assets/hvac-mechanical-room.jpg" alt="Mechanical room with HVAC piping and building equipment">
+            <div class="industry-body">
+              <h3>Facility Management</h3>
+              <p>Programs that help FM organizations improve contract performance across large portfolios.</p>
+              <div class="chips">
+                <span class="chip">Portfolio scale</span>
+                <span class="chip">Client satisfaction</span>
+                <span class="chip">Reliability</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="industry-card">
+            <img src="assets/facility-intelligence.jpg" alt="Facility operations control room with monitoring screens">
+            <div class="industry-body">
+              <h3>Hospitality</h3>
+              <p>Hotels and resorts dealing with guest comfort complaints, utility costs, and aging infrastructure.</p>
+              <div class="chips">
+                <span class="chip">Comfort</span>
+                <span class="chip">Energy use</span>
+                <span class="chip">HVAC uptime</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="industry-card">
+            <img src="assets/healthcare-facility.jpg" alt="Large institutional building exterior">
+            <div class="industry-body">
+              <h3>Government</h3>
+              <p>Federal, state, municipal, university, and public health facilities with complex capital needs.</p>
+              <div class="chips">
+                <span class="chip">Assessments</span>
+                <span class="chip">Sustainability</span>
+                <span class="chip">Asset planning</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="outcome-band">
+          <div>
+            <h3>One engagement can support decisions across hundreds of facilities.</h3>
+            <p>For healthcare facility management companies, JHE helps surface operational savings, improve system reliability, and build clearer capital plans across multi-site portfolios.</p>
+          </div>
+          <ul class="mini-list">
+            <li>Reduce energy consumption</li>
+            <li>Extend equipment life</li>
+            <li>Support engineering teams</li>
+            <li>Improve operational readiness</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Services</span>
+            <h2>Engineering expertise and AI analytics, focused on measurable outcomes.</h2>
+          </div>
+          <p>Every service is designed to help teams spend less, operate better, and make smarter replacement decisions with the systems they already own.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-media">
+              <img src="assets/facility-intelligence.jpg" alt="Facility intelligence dashboard and operations control screens">
+              <div class="overlay-note">
+                <strong>Assessment</strong>
+                <span>Opportunity map and action plan</span>
+              </div>
+            </div>
+            <div class="service-panel">
+              <span class="service-number">Service 01</span>
+              <h3>AI-Powered Facility Assessment</h3>
+              <p>A rapid assessment that identifies the highest-value opportunities to reduce cost, improve HVAC performance, increase reliability, and strengthen indoor air quality.</p>
+              <div class="feature-list">
+                <span class="feature">Energy savings</span>
+                <span class="feature">HVAC performance</span>
+                <span class="feature">Equipment reliability</span>
+                <span class="feature">Indoor air quality</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service">
+            <div class="service-media">
+              <img src="assets/hvac-mechanical-room.jpg" alt="HVAC mechanical room with piping and facility systems">
+              <div class="overlay-note">
+                <strong>No overhaul</strong>
+                <span>Optimize before replacing</span>
+              </div>
+            </div>
+            <div class="service-panel">
+              <span class="service-number">Service 02</span>
+              <h3>HVAC Optimization</h3>
+              <p>Improve airflow, temperature consistency, occupant comfort, equipment efficiency, and system reliability without defaulting to major capital replacement.</p>
+              <div class="feature-list">
+                <span class="feature">Airflow balancing</span>
+                <span class="feature">Temperature consistency</span>
+                <span class="feature">Comfort complaints</span>
+                <span class="feature">System reliability</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="service">
+            <div class="service-media">
+              <img src="assets/healthcare-facility.jpg" alt="Large healthcare facility building exterior">
+              <div class="overlay-note">
+                <strong>Capital clarity</strong>
+                <span>Replace, optimize, or defer</span>
+              </div>
+            </div>
+            <div class="service-panel">
+              <span class="service-number">Service 03</span>
+              <h3>Energy Reduction and Capital Planning</h3>
+              <p>Programs that lower utility expenses, reduce operational waste, identify system inefficiencies, and clarify where capital dollars generate the strongest return.</p>
+              <div class="feature-list">
+                <span class="feature">Utility cost reduction</span>
+                <span class="feature">Waste identification</span>
+                <span class="feature">Deferred replacement</span>
+                <span class="feature">Asset prioritization</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Why Johnson Health Essentials</span>
+            <h2>Practical facility intelligence, built around the realities of operations.</h2>
+          </div>
+          <p class="muted">JHE connects technical analysis to business outcomes: lower operating costs, stronger reliability, better air quality, and smarter capital timing.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card">
+            <strong>01</strong>
+            <h3>Industry Experience</h3>
+            <p>More than three decades supporting healthcare facilities, environmental services, engineering operations, and facility infrastructure.</p>
+          </article>
+          <article class="proof-card">
+            <strong>02</strong>
+            <h3>Operational Focus</h3>
+            <p>Recommendations are grounded in what facility teams can execute, monitor, and defend to leadership.</p>
+          </article>
+          <article class="proof-card">
+            <strong>03</strong>
+            <h3>Portfolio Value</h3>
+            <p>Designed for organizations where a single assessment model can support decisions across multiple buildings and stakeholders.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="contact">
+      <div class="wrap contact">
+        <div class="contact-panel">
+          <span class="eyebrow">Start here</span>
+          <h2>See what your facilities are leaving on the table.</h2>
+          <p>A facility assessment surfaces the savings, reliability, comfort, and capital-planning opportunities hiding in your existing building systems.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:?subject=Facility%20Assessment%20Request%20-%20Johnson%20Health%20Essentials">Schedule a Facility Assessment</a>
+            <a class="button secondary" href="#services">Review Services</a>
+          </div>
+        </div>
+
+        <aside class="contact-card" aria-label="Assessment focus areas">
+          <h3>Assessment Focus</h3>
+          <p>JHE reviews the operational levers that most often drive cost, comfort, reliability, and replacement pressure.</p>
+          <div class="contact-rows">
+            <div class="contact-row">HVAC performance and controls</div>
+            <div class="contact-row">Energy usage and waste patterns</div>
+            <div class="contact-row">Equipment health and replacement timing</div>
+            <div class="contact-row">Indoor air quality and occupant comfort</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <strong>Johnson Health Essentials</strong><br>
+          Facility intelligence, HVAC optimization, and energy performance support.
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

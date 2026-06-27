@@ -1,0 +1,13 @@
+Image credits for local site assets
+
+assets/healthcare-facility.jpg
+Source: Wikimedia Commons Special:FilePath / Trinity Hospital and Medical Office Building Exterior.jpg
+URL: https://commons.wikimedia.org/wiki/Special:FilePath/Trinity%20Hospital%20and%20Medical%20Office%20Building%20Exterior.jpg
+
+assets/hvac-mechanical-room.jpg
+Source: Wikimedia Commons Special:FilePath / Mechanical room.jpg
+URL: https://commons.wikimedia.org/wiki/Special:FilePath/Mechanical%20room.jpg
+
+assets/facility-intelligence.jpg
+Source: Wikimedia Commons Special:FilePath / Fully automated control room.jpg
+URL: https://commons.wikimedia.org/wiki/Special:FilePath/Fully%20automated%20control%20room.jpg
