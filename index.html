@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Johnson Health Essentials | Facility Intelligence & HVAC Optimization</title>
   <meta name="description" content="Johnson Health Essentials helps healthcare, hospitality, government, and facility management organizations reduce energy costs, optimize HVAC performance, and extend equipment life.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%231f5b57'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='31' font-family='Georgia,serif' font-weight='700' fill='%23faf6ef'%3EJ%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <style>
     :root {
       --ink: #221f1a;
@@ -88,16 +88,11 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      color: var(--paper);
-      background: var(--green);
-      font-family: Georgia, serif;
-      font-size: 24px;
+    .brand-logo {
+      width: clamp(150px, 18vw, 230px);
+      height: 58px;
+      object-fit: contain;
+      object-position: left center;
     }
 
     .nav-links {
@@ -615,7 +610,7 @@
 
     @media (max-width: 640px) {
       .wrap { width: min(100% - 28px, var(--max)); }
-      .brand span { white-space: normal; }
+      .brand-logo { width: 158px; height: 46px; }
       .nav-cta { display: none; }
       .hero-content { padding: 58px 0 38px; }
       .hero h1 { font-size: 44px; }
@@ -638,8 +633,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Johnson Health Essentials home">
-        <span class="brand-mark">J</span>
-        <span>Johnson Health Essentials</span>
+        <img class="brand-logo" src="assets/logo.png" alt="Johnson Health Essentials">
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#industries">Industries</a>
