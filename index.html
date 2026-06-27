@@ -104,6 +104,32 @@
       font-weight: 700;
     }
 
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .74);
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--ink);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     .nav-cta,
     .button {
       display: inline-flex;
@@ -628,8 +654,34 @@
     .footer a { color: rgba(255, 253, 248, .82); }
 
     @media (max-width: 980px) {
-      .nav { align-items: flex-start; padding: 14px 0; }
-      .nav-links { display: none; }
+      .nav {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 14px 0;
+      }
+      .nav-toggle {
+        order: 3;
+        display: inline-flex;
+      }
+      .nav-links {
+        order: 4;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 4px;
+        border-top: 1px solid var(--line);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a {
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(34, 31, 26, .08);
+      }
+      .nav-cta { order: 2; margin-left: auto; }
       .hero { min-height: 78vh; }
       .hero-metrics,
       .industry-grid,
@@ -673,7 +725,12 @@
       <a class="brand" href="#top" aria-label="Johnson Health Essentials home">
         <img class="brand-logo" src="assets/logo.png" alt="Johnson Health Essentials">
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
+      <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
         <a href="#video">Video</a>
         <a href="#industries">Industries</a>
         <a href="#services">Services</a>
@@ -954,5 +1011,28 @@
       </div>
     </div>
   </footer>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const siteNavigation = document.querySelector('#site-navigation');
+
+    function setNavigationOpen(isOpen) {
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      siteNavigation.classList.toggle('is-open', isOpen);
+    }
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+      setNavigationOpen(!isOpen);
+    });
+
+    siteNavigation.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setNavigationOpen(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setNavigationOpen(false);
+    });
+  </script>
 </body>
 </html>
