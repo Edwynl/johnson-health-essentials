@@ -3,24 +3,33 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Johnson Health Essentials | Facility Intelligence & HVAC Optimization</title>
-  <meta name="description" content="Johnson Health Essentials helps healthcare, hospitality, government, and facility management organizations reduce energy costs, optimize HVAC performance, and extend equipment life.">
+  <title>Johnson Health Essentials | U.S. Market Entry & Business Development</title>
+  <meta name="description" content="Johnson Health Essentials helps international companies establish and grow in the United States with local relationships, qualified opportunities, and practical market entry support.">
+  <meta name="theme-color" content="#1f5b4e">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <style>
     :root {
-      --ink: #221f1a;
-      --muted: #665f54;
-      --paper: #faf6ef;
-      --paper-2: #efe7d7;
-      --white: #fffdf8;
-      --green: #1f5b57;
-      --green-2: #dcebe6;
-      --copper: #c2683e;
-      --gold: #e5b565;
-      --line: rgba(34, 31, 26, .12);
-      --shadow: 0 22px 70px rgba(34, 31, 26, .14);
-      --radius: 8px;
+      --ink: #11221d;
+      --muted: #5a6660;
+      --paper: #f7f2e7;
+      --paper-2: #ece4d1;
+      --white: #fffdf6;
+      --green: #1f5b4e;
+      --green-deep: #143d34;
+      --green-2: #cfe1d8;
+      --green-soft: #e7efea;
+      --copper: #c47b48;
+      --copper-deep: #a85f30;
+      --gold: #d4a85a;
+      --line: rgba(17, 34, 29, .12);
+      --line-strong: rgba(17, 34, 29, .22);
+      --shadow-sm: 0 6px 20px rgba(17, 34, 29, .08);
+      --shadow: 0 18px 50px rgba(17, 34, 29, .14);
+      --radius: 10px;
+      --radius-lg: 18px;
       --max: 1180px;
+      --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -29,20 +38,19 @@
       margin: 0;
       color: var(--ink);
       background: var(--paper);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.5;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    img, svg { display: block; max-width: 100%; }
+    .full-img { width: 100%; height: 100%; object-fit: cover; }
 
     a { color: inherit; text-decoration: none; }
-    p, h1, h2, h3 { margin-top: 0; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    p, h1, h2, h3, h4 { margin-top: 0; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
 
     .eyebrow {
       display: inline-flex;
@@ -51,10 +59,9 @@
       color: var(--copper);
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .13em;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
-
     .eyebrow::before {
       content: "";
       width: 28px;
@@ -62,47 +69,83 @@
       background: currentColor;
     }
 
+    /* ===================== Header ===================== */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(250, 246, 239, .9);
+      z-index: 30;
+      background: rgba(247, 242, 231, .88);
       border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
     }
-
     .nav {
       min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 18px;
+      flex-wrap: nowrap;
     }
-
     .brand {
       display: flex;
       align-items: center;
       gap: 12px;
       font-weight: 800;
-      letter-spacing: -.01em;
+    }
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
       white-space: nowrap;
     }
-
-    .brand-logo {
-      width: clamp(150px, 18vw, 230px);
-      height: 58px;
-      object-fit: contain;
-      object-position: left center;
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      color: var(--ink);
+      white-space: nowrap;
     }
-
+    .brand-sub {
+      margin-top: 4px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--copper);
+      white-space: nowrap;
+    }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 26px;
-      color: #4d473e;
-      font-size: 14px;
+      gap: 18px;
+      font-size: 13px;
       font-weight: 700;
+      color: #38443f;
     }
+    .nav-links a {
+      position: relative;
+      padding: 6px 0;
+      white-space: nowrap;
+      transition: color .15s ease;
+    }
+    .nav-links a:hover { color: var(--green); }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -2px;
+      height: 2px;
+      background: var(--copper);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s ease;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
 
     .nav-toggle {
       display: none;
@@ -114,10 +157,9 @@
       gap: 5px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(255, 253, 248, .74);
+      background: rgba(255, 253, 246, .84);
       cursor: pointer;
     }
-
     .nav-toggle span {
       width: 18px;
       height: 2px;
@@ -125,545 +167,665 @@
       background: var(--ink);
       transition: transform .2s ease, opacity .2s ease;
     }
-
     .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
     .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .nav-cta,
-    .button {
+    .nav-cta, .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 44px;
-      padding: 0 18px;
+      padding: 0 20px;
       border: 1px solid transparent;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 14px;
+      font-size: 13.5px;
+      letter-spacing: .01em;
+      white-space: nowrap;
       transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-
-    .nav-cta,
-    .button.primary {
+    .nav-cta, .button.primary {
+      color: var(--white);
+      background: var(--green);
+      box-shadow: 0 12px 28px rgba(31, 91, 78, .28);
+    }
+    .button.primary:hover, .nav-cta:hover {
+      transform: translateY(-2px);
+      background: var(--green-deep);
+    }
+    .button.ghost {
+      color: var(--ink);
+      border-color: var(--line-strong);
+      background: transparent;
+    }
+    .button.ghost:hover {
+      background: var(--green-soft);
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+    .button.copper {
       color: var(--white);
       background: var(--copper);
-      box-shadow: 0 12px 28px rgba(194, 104, 62, .25);
+      box-shadow: 0 12px 28px rgba(196, 123, 72, .32);
     }
-
-    .button.secondary {
-      color: var(--white);
-      border-color: rgba(255, 255, 255, .44);
-      background: rgba(255, 255, 255, .08);
+    .button.copper:hover {
+      background: var(--copper-deep);
+      transform: translateY(-2px);
     }
+    .button.light {
+      color: var(--ink);
+      border-color: rgba(255, 253, 246, .5);
+      background: rgba(255, 253, 246, .12);
+    }
+    .button.light:hover { background: rgba(255, 253, 246, .22); transform: translateY(-2px); }
 
-    .nav-cta:hover,
-    .button:hover { transform: translateY(-2px); }
-
+    /* ===================== Hero ===================== */
     .hero {
       position: relative;
-      min-height: calc(86vh - 72px);
+      min-height: clamp(620px, 88vh, 880px);
       display: grid;
       align-items: end;
       overflow: hidden;
       color: var(--white);
-      background: #171511;
+      background: var(--green-deep);
+      isolation: isolate;
     }
-
     .hero-media {
       position: absolute;
       inset: 0;
+      z-index: -2;
     }
-
     .hero-media::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(20, 18, 14, .88), rgba(20, 18, 14, .58) 46%, rgba(20, 18, 14, .2)),
-        linear-gradient(0deg, rgba(20, 18, 14, .82), rgba(20, 18, 14, .05) 45%);
+        linear-gradient(105deg, rgba(17, 34, 29, .92) 0%, rgba(17, 34, 29, .74) 40%, rgba(17, 34, 29, .35) 78%, rgba(17, 34, 29, .15)),
+        linear-gradient(0deg, rgba(17, 34, 29, .85), rgba(17, 34, 29, .1) 60%);
+      z-index: 1;
     }
-
     .hero-content {
       position: relative;
-      z-index: 1;
-      padding: 82px 0 54px;
+      z-index: 2;
+      padding: 96px 0 72px;
     }
-
     .hero h1 {
-      max-width: 860px;
-      margin: 20px 0 20px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(46px, 7vw, 88px);
+      max-width: 920px;
+      margin: 22px 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(44px, 6.4vw, 84px);
       font-weight: 500;
-      line-height: .98;
-      letter-spacing: 0;
+      line-height: 1;
+      letter-spacing: -.015em;
     }
-
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
     .hero-copy {
-      max-width: 730px;
-      color: rgba(255, 253, 248, .84);
-      font-size: clamp(17px, 2vw, 21px);
+      max-width: 720px;
+      color: rgba(255, 253, 246, .82);
+      font-size: clamp(17px, 1.5vw, 21px);
+      line-height: 1.55;
     }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 32px;
+      margin-top: 34px;
     }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      width: min(760px, 100%);
-      margin-top: 54px;
-      border: 1px solid rgba(255, 255, 255, .18);
-      background: rgba(255, 255, 255, .16);
-      backdrop-filter: blur(12px);
-    }
-
-    .metric {
-      min-height: 112px;
-      padding: 22px;
-      background: rgba(20, 18, 14, .38);
-    }
-
-    .metric strong {
-      display: block;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 36px;
-      line-height: 1;
-      font-weight: 500;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 9px;
-      color: rgba(255, 253, 248, .72);
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      margin-top: 52px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 253, 246, .22);
+      color: rgba(255, 253, 246, .82);
       font-size: 13px;
       font-weight: 700;
-      text-transform: uppercase;
       letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero-meta span { display: inline-flex; align-items: center; gap: 10px; }
+    .hero-meta span::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
     }
 
+    /* ===================== Section base ===================== */
     .section {
-      padding: 88px 0;
-      border-top: 1px solid rgba(34, 31, 26, .08);
+      padding: 104px 0;
+      border-top: 1px solid rgba(17, 34, 29, .08);
     }
-
     .section.alt { background: var(--white); }
     .section.dark {
       color: var(--white);
-      background: var(--ink);
+      background: var(--green-deep);
     }
+    .section.deep-green {
+      color: var(--white);
+      background: var(--green);
+    }
+    .section.cream { background: var(--paper-2); }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
-      gap: 60px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap: 64px;
       align-items: end;
-      margin-bottom: 38px;
+      margin-bottom: 56px;
     }
-
     .section h2 {
       margin: 14px 0 0;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 5vw, 56px);
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.6vw, 58px);
       font-weight: 500;
       line-height: 1.05;
-      letter-spacing: 0;
+      letter-spacing: -.01em;
     }
-
     .section-head p {
       margin: 0;
       color: var(--muted);
       font-size: 17px;
+      line-height: 1.6;
     }
+    .section.dark .section-head p,
+    .section.deep-green .section-head p { color: rgba(255, 253, 246, .74); }
 
-    .dark .section-head p,
-    .dark .muted { color: rgba(255, 253, 248, .68); }
-
-    .video-layout {
+    /* ===================== About ===================== */
+    .about-layout {
       display: grid;
-      grid-template-columns: minmax(260px, .76fr) minmax(0, 1.24fr);
-      gap: 46px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 64px;
       align-items: center;
     }
-
-    .video-copy h2 {
-      margin: 14px 0 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 5vw, 56px);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: 0;
-    }
-
-    .video-copy p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .video-frame {
-      aspect-ratio: 16 / 9;
+    .about-copy h2 { margin-bottom: 22px; }
+    .about-copy p { color: var(--muted); font-size: 17px; }
+    .about-copy p + p { margin-top: 18px; }
+    .about-media {
+      position: relative;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
-      border-radius: var(--radius);
-      background: #171511;
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
-
-    .video-frame iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .industry-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .industry-card {
-      min-height: 380px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow: hidden;
-      position: relative;
-      color: var(--white);
+    .about-media img { width: 100%; height: 100%; object-fit: cover; }
+    .about-stat {
+      position: absolute;
+      left: 22px;
+      bottom: 22px;
+      padding: 18px 22px;
+      background: var(--white);
+      color: var(--ink);
       border-radius: var(--radius);
-      background: #312d27;
-      box-shadow: 0 12px 38px rgba(34, 31, 26, .12);
+      box-shadow: var(--shadow);
+      max-width: calc(100% - 44px);
     }
-
-    .industry-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(20, 18, 14, .92), rgba(20, 18, 14, .08) 58%);
+    .about-stat strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 38px;
+      line-height: 1;
+      color: var(--green);
     }
-
-    .industry-card img {
-      position: absolute;
-      inset: 0;
-      transition: transform .5s ease;
-    }
-
-    .industry-card:hover img { transform: scale(1.04); }
-
-    .industry-body {
-      position: relative;
-      z-index: 1;
-      padding: 24px;
-    }
-
-    .industry-body h3 {
-      margin: 0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-      line-height: 1.05;
-      font-weight: 500;
-    }
-
-    .industry-body p {
-      margin: 0 0 18px;
-      color: rgba(255, 253, 248, .74);
-      font-size: 14px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 10px;
-      color: rgba(255, 253, 248, .88);
-      background: rgba(255, 255, 255, .13);
-      border: 1px solid rgba(255, 255, 255, .18);
-      border-radius: 999px;
+    .about-stat span {
+      display: block;
+      margin-top: 6px;
       font-size: 12px;
       font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--copper);
     }
 
-    .outcome-band {
+    /* ===================== Services ===================== */
+    .services {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 36px;
-      align-items: center;
-      margin-top: 44px;
-      padding: 42px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+    .service {
+      position: relative;
+      padding: 32px 28px 30px;
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      color: var(--white);
-      background: var(--green);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-
-    .outcome-band h3 {
+    .service:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--green-2);
+    }
+    .service-num {
+      display: inline-block;
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--copper);
+      letter-spacing: .14em;
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 18px 0 22px;
+      border-radius: 14px;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+    .service h3 {
       margin: 0 0 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 500;
-      line-height: 1.05;
+      font-family: var(--serif);
+      font-size: 22px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+    .service p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.55;
     }
 
-    .outcome-band p { color: rgba(255, 253, 248, .76); }
-
-    .mini-list {
+    /* ===================== How We Work (Process) ===================== */
+    .process {
       display: grid;
-      gap: 10px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+      counter-reset: step;
       margin: 0;
       padding: 0;
       list-style: none;
     }
-
-    .mini-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 44px;
-      padding: 10px 14px;
-      border: 1px solid rgba(255, 255, 255, .14);
+    .step {
+      position: relative;
+      padding: 28px 22px 24px;
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, .08);
-      font-weight: 800;
+      background: var(--white);
+      border: 1px solid var(--line);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .step::marker { content: ""; }
+    .step:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .step::before {
+      counter-increment: step;
+      content: counter(step, decimal-leading-zero);
+      display: block;
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--copper);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+    .step h4 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.5;
     }
 
-    .mini-list li::before {
+    /* ===================== Industries ===================== */
+    .industries {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .industry {
+      position: relative;
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: var(--white);
+      background: #14302a;
+      box-shadow: 0 14px 40px rgba(17, 34, 29, .18);
+      transition: transform .3s ease;
+    }
+    .industry:hover { transform: translateY(-4px); }
+    .industry img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+    .industry:hover img { transform: scale(1.05); }
+    .industry::after {
       content: "";
-      width: 9px;
-      height: 9px;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(17, 34, 29, .94), rgba(17, 34, 29, .55) 45%, rgba(17, 34, 29, .15));
+    }
+    .industry-body {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 100%;
+      padding: 26px 24px;
+    }
+    .industry-num {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+    .industry h3 {
+      margin: 12px 0 12px;
+      font-family: var(--serif);
+      font-size: 26px;
+      line-height: 1.1;
+      font-weight: 600;
+    }
+    .industry p {
+      margin: 0;
+      color: rgba(255, 253, 246, .82);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    /* ===================== Local extension (highlight band) ===================== */
+    .highlight {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+      gap: 48px;
+      align-items: stretch;
+      padding: 56px;
+      border-radius: var(--radius-lg);
+      background: var(--green);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .highlight-copy h2 {
+      margin: 14px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.05;
+      font-weight: 500;
+    }
+    .highlight-copy p {
+      margin: 0;
+      color: rgba(255, 253, 246, .82);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .highlight-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      align-self: center;
+    }
+    .highlight-list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 253, 246, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 246, .08);
+      font-size: 14.5px;
+      font-weight: 700;
+    }
+    .highlight-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--gold);
       flex: 0 0 auto;
     }
 
-    .services {
+    /* ===================== Engagement ===================== */
+    .engagement {
       display: grid;
-      gap: 22px;
-    }
-
-    .service {
-      display: grid;
-      grid-template-columns: .92fr 1.08fr;
-      gap: 34px;
-      align-items: stretch;
-      min-height: 360px;
-      padding: 22px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: 56px;
+      align-items: center;
+      padding: 44px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--paper);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
     }
-
-    .service:nth-child(even) {
-      grid-template-columns: 1.08fr .92fr;
-      background: #f4eee4;
-    }
-
-    .service:nth-child(even) .service-media { order: 2; }
-
-    .service-media {
+    .engagement-media {
       position: relative;
-      min-height: 320px;
+      aspect-ratio: 4 / 3;
       overflow: hidden;
       border-radius: var(--radius);
-      background: var(--paper-2);
     }
-
-    .service-panel {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 26px 18px;
-    }
-
-    .service-number {
-      color: var(--copper);
-      font-family: "SFMono-Regular", Consolas, monospace;
-      font-size: 12px;
+    .engagement-media img { width: 100%; height: 100%; object-fit: cover; }
+    .engagement-tag {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(17, 34, 29, .82);
+      color: var(--gold);
+      font-size: 11.5px;
       font-weight: 800;
-      letter-spacing: .13em;
+      letter-spacing: .12em;
       text-transform: uppercase;
     }
-
-    .service h3 {
-      margin: 12px 0 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.06;
+    .engagement-tag span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      vertical-align: middle;
+    }
+    .engagement-body h3 {
+      margin: 0 0 10px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.05;
       font-weight: 500;
     }
-
-    .service p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .feature {
-      padding: 13px 14px;
-      border: 1px solid rgba(31, 91, 87, .18);
-      border-radius: var(--radius);
-      color: #24413d;
-      background: var(--green-2);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .overlay-note {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, .22);
-      border-radius: var(--radius);
-      color: var(--white);
-      background: rgba(20, 18, 14, .66);
-      backdrop-filter: blur(10px);
-    }
-
-    .overlay-note strong {
-      display: block;
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .overlay-note span {
-      display: block;
-      margin-top: 6px;
-      color: rgba(255, 253, 248, .72);
+    .engagement-body .sector {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green-deep);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
-
-    .proof-grid {
+    .engagement-body p { margin: 0 0 22px; color: var(--muted); font-size: 16px; }
+    .engagement-points {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .proof-card {
-      min-height: 250px;
-      padding: 28px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, .06);
-    }
-
-    .proof-card strong {
-      display: block;
-      margin-bottom: 18px;
-      color: var(--gold);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 48px;
-      font-weight: 500;
-      line-height: 1;
-    }
-
-    .proof-card h3 {
-      margin: 0 0 12px;
-      font-size: 19px;
-    }
-
-    .proof-card p {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
       margin: 0;
-      color: rgba(255, 253, 248, .68);
+      padding: 0;
+      list-style: none;
+    }
+    .engagement-points li {
+      position: relative;
+      padding-left: 22px;
+      color: #2d3a35;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .engagement-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 12px;
+      height: 2px;
+      background: var(--copper);
     }
 
+    /* ===================== Why JHE ===================== */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .why {
+      padding: 26px 22px;
+      border-radius: var(--radius);
+      background: rgba(255, 253, 246, .06);
+      border: 1px solid rgba(255, 253, 246, .14);
+      transition: background .25s ease, transform .25s ease;
+    }
+    .why:hover { background: rgba(255, 253, 246, .1); transform: translateY(-3px); }
+    .why-num {
+      display: block;
+      font-family: var(--serif);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: .14em;
+    }
+    .why h3 {
+      margin: 14px 0 10px;
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .why p {
+      margin: 0;
+      color: rgba(255, 253, 246, .78);
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+
+    /* ===================== Contact ===================== */
     .contact {
       display: grid;
-      grid-template-columns: minmax(0, .96fr) minmax(320px, .74fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
       gap: 48px;
       align-items: stretch;
     }
-
     .contact-panel {
-      padding: 34px;
-      border-radius: var(--radius);
-      background: var(--green);
+      padding: 40px;
+      border-radius: var(--radius-lg);
       color: var(--white);
+      background: var(--green);
+      box-shadow: var(--shadow);
     }
-
-    .contact-panel h2 {
-      margin-top: 12px;
-    }
-
-    .contact-panel p { color: rgba(255, 253, 248, .78); }
-
+    .contact-panel h2 { margin-top: 12px; }
+    .contact-panel p { color: rgba(255, 253, 246, .82); }
+    .contact-panel .eyebrow { color: var(--gold); }
     .contact-card {
-      padding: 32px;
+      padding: 36px;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-lg);
       background: var(--white);
-      box-shadow: 0 16px 44px rgba(34, 31, 26, .08);
+      box-shadow: var(--shadow-sm);
     }
-
     .contact-card h3 {
-      margin-bottom: 16px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
+      margin: 0 0 6px;
+      font-family: var(--serif);
+      font-size: 28px;
       font-weight: 500;
     }
-
-    .contact-rows {
-      display: grid;
-      gap: 12px;
-      margin-top: 22px;
+    .contact-card > p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 15px;
     }
-
+    .contact-rows { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
     .contact-row {
-      padding: 15px 16px;
-      border-radius: var(--radius);
-      background: #f1eadf;
-      font-weight: 800;
-    }
-
-    .footer {
-      padding: 42px 0;
-      color: rgba(255, 253, 248, .64);
-      background: #171511;
-    }
-
-    .footer-grid {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 28px;
-      border-top: 1px solid rgba(255, 255, 255, .12);
-      padding-top: 26px;
-      font-size: 13px;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      background: #f1ead9;
+      font-weight: 700;
+      font-size: 14.5px;
+    }
+    .contact-row::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--copper);
+      flex: 0 0 auto;
     }
 
-    .footer a { color: rgba(255, 253, 248, .82); }
+    /* ===================== Footer ===================== */
+    .footer {
+      padding: 56px 0 32px;
+      color: rgba(255, 253, 246, .7);
+      background: #0c1c18;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, 1fr));
+      gap: 40px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 253, 246, .12);
+    }
+    .footer h4 {
+      margin: 0 0 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .footer p, .footer li { font-size: 14px; line-height: 1.6; }
+    .footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+    .footer a { color: rgba(255, 253, 246, .82); transition: color .2s ease; }
+    .footer a:hover { color: var(--gold); }
+    .footer-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: rgba(255, 253, 246, .55);
+    }
 
-    @media (max-width: 980px) {
-      .nav {
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 14px;
-        padding: 14px 0;
-      }
-      .nav-toggle {
-        order: 3;
-        display: inline-flex;
-      }
+    /* ===================== Responsive ===================== */
+    @media (max-width: 1024px) {
+      .section-head { grid-template-columns: 1fr; gap: 22px; align-items: start; margin-bottom: 40px; }
+      .about-layout,
+      .highlight,
+      .engagement,
+      .contact { grid-template-columns: 1fr; }
+      .services { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .industries { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .process { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .highlight { padding: 38px; }
+      .engagement { padding: 28px; }
+    }
+
+    @media (max-width: 720px) {
+      .nav { min-height: 64px; gap: 12px; padding: 12px 0; }
+      .nav-toggle { order: 3; display: inline-flex; }
       .nav-links {
         order: 4;
         width: 100%;
@@ -671,51 +833,40 @@
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        padding: 10px 0 4px;
+        padding: 8px 0 4px;
         border-top: 1px solid var(--line);
       }
       .nav-links.is-open { display: flex; }
       .nav-links a {
-        min-height: 46px;
+        min-height: 48px;
         display: flex;
         align-items: center;
-        border-bottom: 1px solid rgba(34, 31, 26, .08);
+        border-bottom: 1px solid rgba(17, 34, 29, .08);
       }
-      .nav-cta { order: 2; margin-left: auto; }
-      .hero { min-height: 78vh; }
-      .hero-metrics,
-      .industry-grid,
-      .proof-grid { grid-template-columns: 1fr; }
-      .section-head,
-      .video-layout,
-      .outcome-band,
-      .service,
-      .service:nth-child(even),
-      .contact {
-        grid-template-columns: 1fr;
-      }
-      .service:nth-child(even) .service-media { order: 0; }
-      .industry-card { min-height: 320px; }
-    }
+      .nav-links a::after { display: none; }
+      .nav-cta { order: 2; margin-left: auto; padding: 0 14px; min-height: 40px; font-size: 13px; }
+      .brand-sub { display: none; }
 
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
-      .brand-logo { width: 158px; height: 46px; }
-      .nav-cta { display: none; }
-      .hero-content { padding: 58px 0 38px; }
-      .hero h1 { font-size: 44px; }
-      .hero-metrics { margin-top: 34px; }
-      .metric { min-height: auto; }
-      .section { padding: 64px 0; }
-      .section-head { gap: 18px; margin-bottom: 28px; }
-      .outcome-band,
+      .hero { min-height: 78vh; }
+      .hero-content { padding: 64px 0 44px; }
+      .hero h1 { font-size: clamp(38px, 9vw, 52px); }
+      .hero-meta { gap: 12px 22px; margin-top: 36px; padding-top: 22px; }
+
+      .section { padding: 72px 0; }
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .services,
+      .industries,
+      .process,
+      .why-grid { grid-template-columns: 1fr; }
+      .industry { min-height: 320px; }
+      .about-stat { left: 16px; bottom: 16px; padding: 16px 18px; }
+      .about-stat strong { font-size: 30px; }
+      .engagement-points { grid-template-columns: 1fr; }
+      .highlight,
       .contact-panel,
       .contact-card { padding: 26px; }
-      .service { padding: 14px; gap: 18px; }
-      .service-panel { padding: 12px 4px 8px; }
-      .service-media { min-height: 260px; }
-      .feature-list { grid-template-columns: 1fr; }
-      .footer-grid { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-meta { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -723,279 +874,372 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Johnson Health Essentials home">
-        <img class="brand-logo" src="assets/logo.png" alt="Johnson Health AI">
+        <img class="brand-mark" src="assets/logo-mark.png" alt="">
+        <span class="brand-text">
+          <span class="brand-name">Johnson Health Essentials</span>
+          <span class="brand-sub">U.S. Market Entry &amp; Business Development</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
-        <a href="#video">Video</a>
+        <a href="#about">About</a>
+        <a href="#services">What We Do</a>
+        <a href="#process">How We Work</a>
         <a href="#industries">Industries</a>
-        <a href="#services">Services</a>
+        <a href="#engagement">Engagements</a>
         <a href="#why">Why JHE</a>
         <a href="#contact">Contact</a>
       </nav>
-      <a class="nav-cta" href="#contact">Schedule Assessment</a>
+      <a class="nav-cta" href="#contact">Contact Us</a>
     </div>
   </header>
 
   <main id="top">
+    <!-- ============== HERO ============== -->
     <section class="hero" aria-label="Johnson Health Essentials">
       <div class="hero-media" aria-hidden="true">
-        <img src="assets/healthcare-facility.jpg" alt="">
+        <img src="assets/hero.jpg" alt="" class="full-img">
       </div>
       <div class="wrap hero-content">
-        <span class="eyebrow">Facility intelligence for critical buildings</span>
-        <h1>Reduce Energy Costs. Extend Equipment Life. Improve Building Performance.</h1>
-        <p class="hero-copy">Johnson Health Essentials helps healthcare systems, hospitality organizations, facility management companies, and engineering teams optimize HVAC performance, improve indoor air quality, and delay costly capital replacements through AI-powered facility assessments.</p>
+        <span class="eyebrow" style="color: var(--gold);">U.S. Market Entry &amp; Business Development</span>
+        <h1>Your partner for entering and growing in the <em>U.S. market</em>.</h1>
+        <p class="hero-copy">Johnson Health Essentials helps international companies establish and grow their presence in the United States. We provide hands-on, in-market business development support — from identifying the right customers and partners to opening conversations, arranging meetings, and developing commercial opportunities.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#contact">Schedule a Facility Assessment</a>
-          <a class="button secondary" href="#services">Explore Services</a>
+          <a class="button copper" href="#industries">Explore the U.S. Market</a>
+          <a class="button light" href="#contact">Contact Us</a>
         </div>
-        <div class="hero-metrics" aria-label="Company highlights">
-          <div class="metric">
-            <strong>30+</strong>
-            <span>Years of facility operations experience</span>
+        <div class="hero-meta" aria-label="What we deliver">
+          <span>Local Relationships</span>
+          <span>Qualified Opportunities</span>
+          <span>Practical Market Entry</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== ABOUT ============== -->
+    <section class="section" id="about">
+      <div class="wrap about-layout">
+        <div class="about-copy">
+          <span class="eyebrow">About Johnson Health Essentials</span>
+          <h2>U.S. market entry, made more practical.</h2>
+          <p>Entering the U.S. market requires more than a list of contacts. Johnson Health Essentials works alongside international companies to understand their offering, identify where it fits in the U.S. market, and connect them with relevant customers, partners, and industry stakeholders.</p>
+          <p>Our role is practical: find the right opportunities, reach the right people, and help move promising conversations forward.</p>
+          <p>We support companies from initial market assessment through prospect development, introductions, meetings, and commercial follow-up.</p>
+          <div class="hero-actions" style="margin-top: 30px;">
+            <a class="button primary" href="#services">See How We Work</a>
+            <a class="button ghost" href="#contact">Start a Conversation</a>
           </div>
-          <div class="metric">
-            <strong>4</strong>
-            <span>Primary sectors served</span>
-          </div>
-          <div class="metric">
+        </div>
+        <div class="about-media" aria-hidden="true">
+          <img src="assets/about.jpg" alt="">
+          <div class="about-stat">
             <strong>1</strong>
-            <span>Assessment can guide many sites</span>
+            <span>In-market extension of your team</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section alt" id="video">
-      <div class="wrap video-layout">
-        <div class="video-copy">
-          <span class="eyebrow">Featured video</span>
-          <h2>See the Johnson Health Essentials approach in motion.</h2>
-          <p>A quick overview of how JHE helps facility teams connect building performance, HVAC optimization, energy savings, and capital planning into one practical operating strategy.</p>
+    <!-- ============== WHAT WE DO ============== -->
+    <section class="section alt" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">What We Do</span>
+            <h2>From market assessment to qualified commercial opportunity.</h2>
+          </div>
+          <p>Six practical services that turn U.S. market-entry intent into real activity — qualified prospects, real meetings, and progressing opportunities.</p>
         </div>
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/hdH4jNFBL_U?rel=0"
-            title="Johnson Health Essentials video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+
+        <div class="services">
+          <article class="service">
+            <span class="service-num">01 — Assessment</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 3v18M3 12h18"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h3>U.S. Market Entry &amp; Opportunity Assessment</h3>
+            <p>We help companies understand where their products and services fit within the U.S. market — identifying priority industries, customer segments, potential partners, market opportunities, and practical routes to market.</p>
+          </article>
+
+          <article class="service">
+            <span class="service-num">02 — Identification</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m20 20-3.5-3.5"/>
+                <path d="M11 8v6M8 11h6"/>
+              </svg>
+            </div>
+            <h3>Prospect Identification &amp; Qualification</h3>
+            <p>We research potential customers, partners, and other relevant organizations, identifying the decision-makers most relevant to each opportunity — prioritizing prospects on real fit, not contact volume.</p>
+          </article>
+
+          <article class="service">
+            <span class="service-num">03 — Outreach</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11 21 3l-7 18-3-8-8-2z"/>
+              </svg>
+            </div>
+            <h3>Outreach &amp; Lead Generation</h3>
+            <p>We conduct targeted outreach to prospective customers and partners through appropriate business channels and industry networks — creating meaningful conversations with organizations that have a real need for your solution.</p>
+          </article>
+
+          <article class="service">
+            <span class="service-num">04 — Meetings</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                <circle cx="9.5" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Business Meetings &amp; Introductions</h3>
+            <p>We help arrange and facilitate discussions between our clients and qualified U.S. prospects — supporting meeting preparation, introductions, and follow-up so each discussion has a clear commercial next step.</p>
+          </article>
+
+          <article class="service">
+            <span class="service-num">05 — Development</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17l6-6 4 4 8-8"/>
+                <path d="M14 7h7v7"/>
+              </svg>
+            </div>
+            <h3>Partnership &amp; Opportunity Development</h3>
+            <p>Where there is strong fit, we help develop the opportunity further — including customer discovery, demonstrations, pilot discussions, proposals, local partnerships, and commercial negotiations.</p>
+          </article>
+
+          <article class="service">
+            <span class="service-num">06 — Reporting</span>
+            <div class="service-icon" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <rect x="7" y="12" width="3" height="6"/>
+                <rect x="12" y="8" width="3" height="10"/>
+                <rect x="17" y="5" width="3" height="13"/>
+              </svg>
+            </div>
+            <h3>Pipeline Management &amp; Reporting</h3>
+            <p>We maintain visibility over prospects, meetings, opportunities, and next actions. Clients receive regular updates on market feedback, business-development activity, and opportunities progressing through the pipeline.</p>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- ============== HOW WE WORK ============== -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">How We Work</span>
+            <h2>From market entry to commercial opportunity.</h2>
+          </div>
+          <p>A six-stage engagement model designed to bring discipline and visibility to U.S. business development — so you always know what is happening, what is next, and what is moving.</p>
+        </div>
+
+        <ol class="process">
+          <li class="step">
+            <h4>Understand</h4>
+            <p>We learn the client's solution, target customers, and U.S. objectives.</p>
+          </li>
+          <li class="step">
+            <h4>Identify</h4>
+            <p>We research priority sectors, companies, decision-makers, and potential partners.</p>
+          </li>
+          <li class="step">
+            <h4>Engage</h4>
+            <p>We conduct targeted outreach and qualify market interest.</p>
+          </li>
+          <li class="step">
+            <h4>Connect</h4>
+            <p>We arrange discussions with relevant prospects and stakeholders.</p>
+          </li>
+          <li class="step">
+            <h4>Develop</h4>
+            <p>We help progress qualified opportunities toward pilots, proposals, partnerships, or commercial discussions.</p>
+          </li>
+          <li class="step">
+            <h4>Report</h4>
+            <p>We provide clear visibility of activity, market feedback, pipeline progress, and recommended next actions.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============== INDUSTRIES ============== -->
     <section class="section alt" id="industries">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Industries we serve</span>
-            <h2>Focused on buildings where comfort, reliability, and cost control matter every day.</h2>
+            <span class="eyebrow">Industries</span>
+            <h2>Focused on complex B2B markets.</h2>
           </div>
-          <p>JHE is positioned for owners, operators, and facility management partners who need measurable operational improvements without defaulting to major equipment replacement.</p>
+          <p>Johnson Health Essentials supports companies where market entry depends on trusted relationships, stakeholder engagement, and consultative business development.</p>
         </div>
 
-        <div class="industry-grid">
-          <article class="industry-card">
-            <img src="assets/healthcare-facility.jpg" alt="Modern hospital facility exterior">
+        <div class="industries">
+          <article class="industry">
+            <img src="assets/industry-healthcare.jpg" alt="Modern American hospital exterior">
             <div class="industry-body">
-              <h3>Healthcare</h3>
-              <p>Hospitals, surgery centers, outpatient clinics, long-term care facilities, and healthcare campuses.</p>
-              <div class="chips">
-                <span class="chip">IAQ</span>
-                <span class="chip">Joint Commission readiness</span>
-                <span class="chip">Aging HVAC</span>
-              </div>
+              <span class="industry-num">01 — Healthcare</span>
+              <h3>Healthcare &amp; Hospitals</h3>
+              <p>Solutions supporting healthcare organizations, hospital operations, and related infrastructure.</p>
             </div>
           </article>
 
-          <article class="industry-card">
-            <img src="assets/hvac-mechanical-room.jpg" alt="Mechanical room with HVAC piping and building equipment">
+          <article class="industry">
+            <img src="assets/industry-facilities.jpg" alt="Modern smart commercial building">
             <div class="industry-body">
-              <h3>Facility Management</h3>
-              <p>Programs that help FM organizations improve contract performance across large portfolios.</p>
-              <div class="chips">
-                <span class="chip">Portfolio scale</span>
-                <span class="chip">Client satisfaction</span>
-                <span class="chip">Reliability</span>
-              </div>
+              <span class="industry-num">02 — Facilities</span>
+              <h3>Building &amp; Facility Technologies</h3>
+              <p>Technologies supporting building performance, facility operations, and infrastructure.</p>
             </div>
           </article>
 
-          <article class="industry-card">
-            <img src="assets/facility-intelligence.jpg" alt="Facility operations control room with monitoring screens">
+          <article class="industry">
+            <img src="assets/industry-energy.jpg" alt="Solar panel farm at golden hour">
             <div class="industry-body">
-              <h3>Hospitality</h3>
-              <p>Hotels and resorts dealing with guest comfort complaints, utility costs, and aging infrastructure.</p>
-              <div class="chips">
-                <span class="chip">Comfort</span>
-                <span class="chip">Energy use</span>
-                <span class="chip">HVAC uptime</span>
-              </div>
+              <span class="industry-num">03 — Energy</span>
+              <h3>Energy &amp; Sustainability</h3>
+              <p>Solutions designed to improve efficiency, operational performance, and sustainability.</p>
             </div>
           </article>
 
-          <article class="industry-card">
-            <img src="assets/healthcare-facility.jpg" alt="Large institutional building exterior">
+          <article class="industry">
+            <img src="assets/industry-technology.jpg" alt="Modern AI data center">
             <div class="industry-body">
-              <h3>Government</h3>
-              <p>Federal, state, municipal, university, and public health facilities with complex capital needs.</p>
-              <div class="chips">
-                <span class="chip">Assessments</span>
-                <span class="chip">Sustainability</span>
-                <span class="chip">Asset planning</span>
-              </div>
+              <span class="industry-num">04 — Technology</span>
+              <h3>Technology &amp; AI</h3>
+              <p>International technology companies seeking U.S. customers, partners, pilots, and commercial opportunities.</p>
             </div>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div class="outcome-band">
-          <div>
-            <h3>One engagement can support decisions across hundreds of facilities.</h3>
-            <p>For healthcare facility management companies, JHE helps surface operational savings, improve system reliability, and build clearer capital plans across multi-site portfolios.</p>
+    <!-- ============== INTERNATIONAL COMPANIES (Highlight) ============== -->
+    <section class="section" id="international">
+      <div class="wrap">
+        <div class="highlight">
+          <div class="highlight-copy">
+            <span class="eyebrow" style="color: var(--gold);">International Companies</span>
+            <h2>A local extension of your team.</h2>
+            <p>You don't need to build a full U.S. sales organization before testing the market. Johnson Health Essentials can operate as an in-market extension of your team — helping you understand the market, develop relationships, and establish an initial U.S. opportunity pipeline.</p>
+            <p style="margin-top: 16px;">We help bridge the gap between entering the United States and building a sustainable commercial presence.</p>
           </div>
-          <ul class="mini-list">
-            <li>Reduce energy consumption</li>
-            <li>Extend equipment life</li>
-            <li>Support engineering teams</li>
-            <li>Improve operational readiness</li>
+          <ul class="highlight-list">
+            <li>Understand the U.S. market before you commit</li>
+            <li>Develop trusted local relationships</li>
+            <li>Establish an initial opportunity pipeline</li>
+            <li>Bridge to a sustainable commercial presence</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
+    <!-- ============== OUR ENGAGEMENTS ============== -->
+    <section class="section cream" id="engagement">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Services</span>
-            <h2>Engineering expertise and AI analytics, focused on measurable outcomes.</h2>
+            <span class="eyebrow">Our Engagements</span>
+            <h2>Supporting international technology market entry.</h2>
           </div>
-          <p>Every service is designed to help teams spend less, operate better, and make smarter replacement decisions with the systems they already own.</p>
+          <p>Johnson Health Essentials supports international companies seeking to establish and develop commercial opportunities in the United States.</p>
         </div>
 
-        <div class="services">
-          <article class="service">
-            <div class="service-media">
-              <img src="assets/facility-intelligence.jpg" alt="Facility intelligence dashboard and operations control screens">
-              <div class="overlay-note">
-                <strong>Assessment</strong>
-                <span>Opportunity map and action plan</span>
-              </div>
-            </div>
-            <div class="service-panel">
-              <span class="service-number">Service 01</span>
-              <h3>AI-Powered Facility Assessment</h3>
-              <p>A rapid assessment that identifies the highest-value opportunities to reduce cost, improve HVAC performance, increase reliability, and strengthen indoor air quality.</p>
-              <div class="feature-list">
-                <span class="feature">Energy savings</span>
-                <span class="feature">HVAC performance</span>
-                <span class="feature">Equipment reliability</span>
-                <span class="feature">Indoor air quality</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service-media">
-              <img src="assets/hvac-mechanical-room.jpg" alt="HVAC mechanical room with piping and facility systems">
-              <div class="overlay-note">
-                <strong>No overhaul</strong>
-                <span>Optimize before replacing</span>
-              </div>
-            </div>
-            <div class="service-panel">
-              <span class="service-number">Service 02</span>
-              <h3>HVAC Optimization</h3>
-              <p>Improve airflow, temperature consistency, occupant comfort, equipment efficiency, and system reliability without defaulting to major capital replacement.</p>
-              <div class="feature-list">
-                <span class="feature">Airflow balancing</span>
-                <span class="feature">Temperature consistency</span>
-                <span class="feature">Comfort complaints</span>
-                <span class="feature">System reliability</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="service">
-            <div class="service-media">
-              <img src="assets/healthcare-facility.jpg" alt="Large healthcare facility building exterior">
-              <div class="overlay-note">
-                <strong>Capital clarity</strong>
-                <span>Replace, optimize, or defer</span>
-              </div>
-            </div>
-            <div class="service-panel">
-              <span class="service-number">Service 03</span>
-              <h3>Energy Reduction and Capital Planning</h3>
-              <p>Programs that lower utility expenses, reduce operational waste, identify system inefficiencies, and clarify where capital dollars generate the strongest return.</p>
-              <div class="feature-list">
-                <span class="feature">Utility cost reduction</span>
-                <span class="feature">Waste identification</span>
-                <span class="feature">Deferred replacement</span>
-                <span class="feature">Asset prioritization</span>
-              </div>
-            </div>
-          </article>
-        </div>
+        <article class="engagement">
+          <div class="engagement-media">
+            <span class="engagement-tag"><span></span>Active Engagement</span>
+            <img src="assets/engagement.jpg" alt="Business meeting between teams">
+          </div>
+          <div class="engagement-body">
+            <span class="sector">AI / Building Technology / Energy Efficiency</span>
+            <h3>Retragreen</h3>
+            <p>Johnson Health Essentials is supporting Retragreen's U.S. market-entry and business-development activities. The engagement covers identifying relevant organizations and decision-makers, developing prospective opportunities, conducting outreach, facilitating introductions and meetings, and supporting the development of potential pilots, partnerships, and commercial engagements.</p>
+            <ul class="engagement-points">
+              <li>Prospect identification &amp; qualification</li>
+              <li>Targeted outreach &amp; lead generation</li>
+              <li>Facilitated introductions &amp; meetings</li>
+              <li>Pilot, partnership &amp; commercial support</li>
+            </ul>
+            <p style="margin-top: 20px; font-size: 13px; color: var(--muted); font-style: italic;">Note: Results and specific customer engagements are only added once confirmed and approved for public disclosure.</p>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- ============== WHY JHE ============== -->
     <section class="section dark" id="why">
       <div class="wrap">
         <div class="section-head">
           <div>
-            <span class="eyebrow">Why Johnson Health Essentials</span>
-            <h2>Practical facility intelligence, built around the realities of operations.</h2>
+            <span class="eyebrow" style="color: var(--gold);">Why Johnson Health Essentials</span>
+            <h2>Local execution. Commercial focus.</h2>
           </div>
-          <p class="muted">JHE connects technical analysis to business outcomes: lower operating costs, stronger reliability, better air quality, and smarter capital timing.</p>
+          <p>International companies often understand their technology but need local support to navigate a large and fragmented U.S. market. Johnson Health Essentials provides the in-market execution needed to turn a market-entry strategy into real activity.</p>
         </div>
 
-        <div class="proof-grid">
-          <article class="proof-card">
-            <strong>01</strong>
-            <h3>Industry Experience</h3>
-            <p>More than three decades supporting healthcare facilities, environmental services, engineering operations, and facility infrastructure.</p>
+        <div class="why-grid">
+          <article class="why">
+            <span class="why-num">01</span>
+            <h3>Targeted Development</h3>
+            <p>Targeted market development — rather than broad, untargeted prospecting.</p>
           </article>
-          <article class="proof-card">
-            <strong>02</strong>
-            <h3>Operational Focus</h3>
-            <p>Recommendations are grounded in what facility teams can execute, monitor, and defend to leadership.</p>
+          <article class="why">
+            <span class="why-num">02</span>
+            <h3>Qualified Introductions</h3>
+            <p>Qualified introductions — rather than contact lists.</p>
           </article>
-          <article class="proof-card">
-            <strong>03</strong>
-            <h3>Portfolio Value</h3>
-            <p>Designed for organizations where a single assessment model can support decisions across multiple buildings and stakeholders.</p>
+          <article class="why">
+            <span class="why-num">03</span>
+            <h3>Local Engagement</h3>
+            <p>Local engagement — with customers, partners, and stakeholders across the U.S.</p>
+          </article>
+          <article class="why">
+            <span class="why-num">04</span>
+            <h3>Structured Follow-Up</h3>
+            <p>Structured follow-up — to keep promising opportunities moving forward.</p>
+          </article>
+          <article class="why">
+            <span class="why-num">05</span>
+            <h3>Clear Reporting</h3>
+            <p>Clear reporting — so clients know what is happening in the market and where to focus next.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ============== CONTACT ============== -->
     <section class="section alt" id="contact">
       <div class="wrap contact">
         <div class="contact-panel">
-          <span class="eyebrow">Start here</span>
-          <h2>See what your facilities are leaving on the table.</h2>
-          <p>A facility assessment surfaces the savings, reliability, comfort, and capital-planning opportunities hiding in your existing building systems.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="mailto:?subject=Facility%20Assessment%20Request%20-%20Johnson%20Health%20Essentials">Schedule a Facility Assessment</a>
-            <a class="button secondary" href="#services">Review Services</a>
+          <span class="eyebrow">Start Here</span>
+          <h2>Exploring the U.S. market?</h2>
+          <p>If your company is considering entering or expanding in the United States, talk to us about your objectives. We can help assess the opportunity, identify potential customers and partners, and develop a practical pathway into the market.</p>
+          <div class="hero-actions" style="margin-top: 30px;">
+            <a class="button copper" href="mailto:partnerships@johnsonhealthessentials.com?subject=U.S.%20Market%20Entry%20Inquiry%20-%20Johnson%20Health%20Essentials">Email Our Team</a>
+            <a class="button light" href="#services">Review What We Do</a>
           </div>
         </div>
 
-        <aside class="contact-card" aria-label="Assessment focus areas">
-          <h3>Assessment Focus</h3>
-          <p>JHE reviews the operational levers that most often drive cost, comfort, reliability, and replacement pressure.</p>
-          <div class="contact-rows">
-            <div class="contact-row">HVAC performance and controls</div>
-            <div class="contact-row">Energy usage and waste patterns</div>
-            <div class="contact-row">Equipment health and replacement timing</div>
-            <div class="contact-row">Indoor air quality and occupant comfort</div>
-          </div>
+        <aside class="contact-card" aria-label="Contact details">
+          <h3>Johnson Health Essentials</h3>
+          <p>U.S. business address, email, and phone — provided on request for qualified inquiries.</p>
+          <ul class="contact-rows">
+            <li class="contact-row">U.S. Business Address — provided on request</li>
+            <li class="contact-row">Email — partnerships@johnsonhealthessentials.com</li>
+            <li class="contact-row">Telephone — provided on request</li>
+            <li class="contact-row">Engagement model — flexible, milestone-based</li>
+          </ul>
         </aside>
       </div>
     </section>
@@ -1005,12 +1249,38 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <strong>Johnson Health Essentials</strong><br>
-          Facility intelligence, HVAC optimization, and energy performance support.
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <img src="assets/logo-mark.png" alt="" style="width: 36px; height: 36px;">
+            <strong style="font-family: var(--serif); font-size: 18px; color: var(--white);">Johnson Health Essentials</strong>
+          </div>
+          <p>Helping international companies enter and grow in the United States — through local relationships, qualified opportunities, and practical market entry.</p>
         </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">What We Do</a></li>
+            <li><a href="#process">How We Work</a></li>
+            <li><a href="#industries">Industries</a></li>
+            <li><a href="#why">Why JHE</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <ul>
+            <li><a href="mailto:partnerships@johnsonhealthessentials.com">Email Our Team</a></li>
+            <li><a href="#engagement">Engagements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span>&copy; <span id="year">2026</span> Johnson Health Essentials. All rights reserved.</span>
+        <span>U.S. Market Entry &amp; Business Development</span>
       </div>
     </div>
   </footer>
+
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const siteNavigation = document.querySelector('#site-navigation');
@@ -1033,6 +1303,8 @@
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') setNavigationOpen(false);
     });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
